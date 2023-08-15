@@ -6,7 +6,6 @@ import { PingController, ROUTES } from './controller';
 const addRoutes = (
   app: Express,
   options: ApiConfig = { version: '0', apiPrefix: '/api' }): void => {
-  console.log({ ROUTES });
   app.get(
     ROUTES.index,
     (_req: Request, res: Response) => {

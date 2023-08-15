@@ -9,8 +9,7 @@
     "predev": "npm run swagger",
     "build": "npx tsc",
     "dev": "nodemon src/index.ts",
-    "swagger": "tsoa spec",
-    "thing": "tsoa routes"
+    "swagger": "tsoa spec"
   },
   "author": "",
   "license": "ISC",
