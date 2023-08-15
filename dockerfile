@@ -1,15 +1,15 @@
-FROM alpine:3.18 as base
+FROM node:latest
 
-WORKDIR /home/node/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json /app
 
 RUN npm install
 
 COPY . .
 
-FROM base as production
-
-ENV NODE_PATH=./build
-
 RUN npm run build
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start"]
