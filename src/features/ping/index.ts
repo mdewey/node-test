@@ -1,37 +1,26 @@
 import { type Express, type Request, type Response } from 'express';
+import type { ApiConfig } from '../../types/config';
 
-interface ApiConfig {
-  version: string
-  apiPrefix: string
-}
-
-const API_ROOT = 'ping';
+import { PingController, ROUTES } from './controller';
 
 const addRoutes = (
   app: Express,
   options: ApiConfig = { version: '0', apiPrefix: '/api' }): void => {
+  console.log({ ROUTES });
   app.get(
-    `${options.apiPrefix}/v${options.version}/${API_ROOT}`,
-    (req: Request, res: Response) => {
-      res.json({
-        status: 'pong',
-        when: new Date()
-      });
+    ROUTES.index,
+    (_req: Request, res: Response) => {
+      res.json(new PingController(options).ping());
     });
 
   app.get(
-    `${options.apiPrefix}/v${options.version}/${API_ROOT}/debug`,
-    (req: Request, res: Response) => {
-      res.json({
-        status: 'pong',
-        when: new Date(),
-        version: options.version,
-        ...process.env
-      });
+    ROUTES.debug,
+    (_req: Request, res: Response) => {
+      res.json(new PingController(options).debugPing());
     });
 
   app.get(
-    `${options.apiPrefix}/v${options.version}/${API_ROOT}/error`,
+    ROUTES.error,
     (req: Request, res: Response) => {
       throw new Error('Expected broken route');
     });

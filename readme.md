@@ -9,8 +9,9 @@ This is a sample node application to prove out LHDI. This might be transformed i
 - [x] linting
 - [x] typescript
 - [x] docker
-- [ ] env config
-- [ ] swagger
+- [x] env config
+- [ ] ~swagger~ This is harder than it should, I have to list routes in two places or using some bonkers routes generator. This might cause me to pivot to a different framework
+- [ ] logging
 - [x] sample endpoint
 - [x] git
 

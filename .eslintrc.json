@@ -10,8 +10,12 @@
         "project": "./tsconfig.json"
     },
     "rules": {
-        "semi": ["error", "always"],
+        "semi": [
+            "error",
+            "always"
+        ],
         "@typescript-eslint/semi": "off",
+        "@typescript-eslint/space-before-function-paren": "off",
         "no-unexpected-multiline": "error",
         "max-len": [
             1,
