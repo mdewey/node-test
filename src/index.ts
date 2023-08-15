@@ -1,9 +1,7 @@
 import express, { type Express, type Request, type Response } from 'express';
-import dotenv from 'dotenv';
+import 'dotenv/config';
 
 import ping from './features/ping';
-
-dotenv.config();
 
 const app: Express = express();
 // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions

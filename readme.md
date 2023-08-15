@@ -8,10 +8,10 @@ This is a sample node application to prove out LHDI. This might be transformed i
 
 - [x] linting
 - [x] typescript
-- [ ] docker
+- [x] docker
 - [ ] env config
 - [ ] swagger
-- [ ] sample endpoint
+- [x] sample endpoint
 - [x] git
 
 ## Things to prove out
